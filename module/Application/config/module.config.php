@@ -42,7 +42,7 @@ return array(
                             'options' => array(
                                 'route'    => '/',
                                 'defaults' => array(
-                                    'controller' => 'Application\Controller\IndexController',
+                                    'controller' => 'Album\Controller\AlbumController',
                                     'action'     => 'index',
                                 ),
                             ),

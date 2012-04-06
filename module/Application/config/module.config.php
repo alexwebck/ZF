@@ -50,7 +50,19 @@ return array(
                     ),
                 ),
             ),
-
+            'Zend\Db\Adapter\Adapter' => array(
+                'parameters' => array(
+                    'driver' => array(
+                        'driver' => 'Pdo',
+                        'dsn' => 'mysql:dbname=zend2;hostname=localhost',
+                        'username' => 'root',
+                        'password' => '',
+                        'driver_options' => array(
+                            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+                        ),
+                    ),
+                )
+            ),
             // Setup for the view layer.
 
             // Using the PhpRenderer, which just handles html produced by php 

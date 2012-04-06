@@ -18,11 +18,11 @@ return array(
                 'parameters' = array(
                     'driver' = array(
                         'driver' = 'Pdo',
-                        'dsn' = 'mysqldbname=admin;hostname=localhost',
+                        'dsn' = 'mysql:dbname=admin;hostname=localhost',
                         'username' = 'root',
                         'password' = '',
                         'driver_options' = array(
-                            PDOMYSQL_ATTR_INIT_COMMAND = 'SET NAMES 'UTF8''
+                            PDO::MYSQL_ATTR_INIT_COMMAND = 'SET NAMES 'UTF8''
                         ),
                     ),
                 )

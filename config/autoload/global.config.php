@@ -18,7 +18,7 @@ return array(
                 'parameters' = array(
                     'driver' = array(
                         'driver' = 'Pdo',
-                        'dsn' = 'mysql:dbname=admin;hostname=localhost',
+                        'dsn' = 'mysql:dbname=album;hostname=localhost',
                         'username' = 'root',
                         'password' = '',
                         'driver_options' = array(

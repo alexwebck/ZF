@@ -1,4 +1,3 @@
-/config/autoload/global.config.php
 nbproject
 ._*
 .~lock.*
@@ -7,4 +6,5 @@ nbproject
 .idea
 .project
 .settings
+/config/autoload/global.config.php
 

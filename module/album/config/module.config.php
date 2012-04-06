@@ -15,19 +15,6 @@ return array(
                     'adapter' => 'Zend\Db\Adapter\Adapter',
                     )
             ),
-            'Zend\Db\Adapter\Adapter' => array(
-                'parameters' => array(
-                    'driver' => array(
-                        'driver' => 'Pdo',
-                        'dsn' => 'mysql:dbname=album;hostname=localhost',
-                        'username' => 'root',
-                        'password' => '',
-                        'driver_options' => array(
-                            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
-                        ),
-                    ),
-                )
-            ),
             'Zend\View\Resolver\TemplatePathStack' => array(
                 'parameters' => array(
                     'paths'  => array(

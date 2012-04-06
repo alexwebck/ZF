@@ -25,19 +25,21 @@ class AlbumTable extends TableGateway
         }
         return $row;
     }
-    public function addAlbum($artist, $title)
+    public function addAlbum($artist, $title, $photo)
     {
         $data = array(
             'artist' => $artist,
             'title'  => $title,
+            'photo' => $photo,
         );
         $this->insert($data);
     }
-    public function updateAlbum($id, $artist, $title)
+    public function updateAlbum($id, $artist, $title, $photo)
     {
         $data = array(
             'artist' => $artist,
             'title'  => $title,
+            'photo' => $photo,
         );
         $this->update($data, array('id' => $id));
     }

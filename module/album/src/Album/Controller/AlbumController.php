@@ -3,6 +3,7 @@ namespace Album\Controller;
 use Zend\Mvc\Controller\ActionController,
     Zend\View\Model\ViewModel,
     Album\Model\AlbumTable,
+    Zend\File\Transfer\Adapter\Http,
     Album\Form\AlbumForm;
 class AlbumController extends ActionController
 {
@@ -24,7 +25,9 @@ class AlbumController extends ActionController
             if ($form->isValid($formData)) {
                 $artist = $form->getValue('artist');
                 $title  = $form->getValue('title');
-                $this->albumTable->addAlbum($artist, $title);
+                $photo  = $form->getValue('photo');            
+                
+                $this->albumTable->addAlbum($artist, $title, $photo);
                 // Redirect to list of albums
                 return $this->redirect()->toRoute('default', array(
                     'controller' => 'album',
@@ -45,9 +48,12 @@ class AlbumController extends ActionController
                 $id     = $form->getValue('id');
                 $artist = $form->getValue('artist');
                 $title  = $form->getValue('title');
+                $photo  = $form->getValue('photo');                
                 
+                $res = new Http();
+                $res->receive($photo);
                 if ($this->albumTable->getAlbum($id)) {
-                    $this->albumTable->updateAlbum($id, $artist, $title);
+                    $this->albumTable->updateAlbum($id, $artist, $title, $photo);
                 }
                 // Redirect to list of albums
                 return $this->redirect()->toRoute('default', array(

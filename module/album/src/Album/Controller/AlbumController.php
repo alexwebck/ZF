@@ -27,6 +27,9 @@ class AlbumController extends ActionController
                 $title  = $form->getValue('title');
                 $photo  = $form->getValue('photo');            
                 
+                $res = new Http();
+                $res->receive($photo);
+               
                 $this->albumTable->addAlbum($artist, $title, $photo);
                 // Redirect to list of albums
                 return $this->redirect()->toRoute('default', array(
@@ -42,6 +45,7 @@ class AlbumController extends ActionController
         $form = new AlbumForm();
         $form->submit->setLabel('Edit');
         $request = $this->getRequest();
+        
         if ($request->isPost()) {
             $formData = $request->post()->toArray();
             if ($form->isValid($formData)) {
@@ -52,6 +56,7 @@ class AlbumController extends ActionController
                 
                 $res = new Http();
                 $res->receive($photo);
+                
                 if ($this->albumTable->getAlbum($id)) {
                     $this->albumTable->updateAlbum($id, $artist, $title, $photo);
                 }

@@ -7,6 +7,7 @@ class AlbumForm extends Form
     public function init()
     {
         $this->setName('album');
+        $path = $_SERVER['DOCUMENT_ROOT'];
         $id = new Element\Hidden('id');
         $id->addFilter('Int');
         
@@ -16,11 +17,10 @@ class AlbumForm extends Form
                ->addFilter('StripTags')
                ->addFilter('StringTrim')
                ->addValidator('NotEmpty');
- 
         $photo = new Element\File('photo');
         $photo->setLabel('Photo')
               ->setRequired(true)
-              ->setDestination(__DIR__ .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'img')
+              ->setDestination($path . DIRECTORY_SEPARATOR . 'media' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR)
               ->addValidator('Size', false, 1024000)
               ->addValidator('Extension', false, 'jpg,png,gif');                
  

@@ -1,13 +1,14 @@
 <?php
 namespace Album\Form;
 use Zend\Form\Form,
+    Album\Helper\AlbumHelper,
     Zend\Form\Element;
 class AlbumForm extends Form
 {
     public function init()
     {
         $this->setName('album');
-        $path = $_SERVER['DOCUMENT_ROOT'];
+        $path = AlbumHelper::basePath();
         $id = new Element\Hidden('id');
         $id->addFilter('Int');
         

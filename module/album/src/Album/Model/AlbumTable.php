@@ -46,5 +46,8 @@ class AlbumTable extends TableGateway
     public function deleteAlbum($id)
     {
         $this->delete(array('id' => $id));
+//        var_dump(mysql_query("SELECT * FROM album WHERE id='$id'"));
+//        echo mysql_error();
+//        die;
     }
 }

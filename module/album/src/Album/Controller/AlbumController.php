@@ -4,6 +4,7 @@ use Zend\Mvc\Controller\ActionController,
     Zend\View\Model\ViewModel,
     Album\Model\AlbumTable,
     Zend\File\Transfer\Adapter\Http,
+    Album\Helper\AlbumHelper,
     Album\Form\AlbumForm;
 class AlbumController extends ActionController
 {
@@ -13,6 +14,7 @@ class AlbumController extends ActionController
     {
         return new ViewModel(array(
             'albums' => $this->albumTable->fetchAll(),
+            'albumHelper' => new AlbumHelper(),
         ));
     }
     public function addAction()

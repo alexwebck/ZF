@@ -10,6 +10,11 @@ return array(
                     'albumTable' => 'Album\Model\AlbumTable',
                 ),
             ),
+            'Album\Helper\AlbumHelper' => array(
+                'parameters' => array(
+                    'albumHelper' => 'Album\Helper\AlbumHelper',
+                ),
+            ),            
             'Album\Model\AlbumTable' => array(
                 'parameters' => array(
                     'adapter' => 'Zend\Db\Adapter\Adapter',

@@ -9,12 +9,13 @@ use Zend\Mvc\Controller\ActionController,
 class AlbumController extends ActionController
 {
     protected $albumTable;
+    protected $albumHelper;
     
     public function indexAction()
     {
         return new ViewModel(array(
             'albums' => $this->albumTable->fetchAll(),
-            'albumHelper' => new AlbumHelper(),
+            'albumHelper' => $this->albumHelper,
         ));
     }
     public function addAction()
@@ -99,4 +100,9 @@ class AlbumController extends ActionController
         $this->albumTable = $albumTable;
         return $this;
     }
+    public function setAlbumHelper(AlbumHelper $albumHelper)
+    {
+        $this->albumHelper = $albumHelper;
+        return $this;
+    }    
 }

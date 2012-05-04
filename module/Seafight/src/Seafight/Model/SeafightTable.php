@@ -1,14 +1,14 @@
 <?php
-namespace Album\Model;
+namespace Seafight\Model;
 use Zend\Db\TableGateway\TableGateway,
     Zend\Db\Adapter\Adapter,
     Zend\Db\ResultSet\ResultSet;
-class AlbumTable extends TableGateway
+class SeafightTable extends TableGateway
 {
     public function __construct(Adapter $adapter = null, $databaseSchema = null, 
         ResultSet $selectResultPrototype = null)
     {
-        return parent::__construct('album', $adapter, $databaseSchema, 
+        return parent::__construct('seafight', $adapter, $databaseSchema, 
             $selectResultPrototype);
     }
     public function fetchAll()
@@ -24,16 +24,13 @@ class AlbumTable extends TableGateway
         if (!$row) {            throw new \Exception("Could not find row $id");
         }
         return $row;
-    }
-    public function addAlbum($artist, $title, $photo)
+    }    
+
+    public function addShips($seafight)
     {
-        $data = array(
-            'artist' => $artist,
-            'title'  => $title,
-            'photo' => $photo,
-        );
+
         $this->insert($data);
-    }
+    }    
     public function updateAlbum($id, $artist, $title, $photo)
     {
         $data = array(

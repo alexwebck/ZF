@@ -2,6 +2,8 @@
 namespace Album\Helper;
 use Zend\View\Helper\AbstractHelper;
 class AlbumHelper extends AbstractHelper {
+
+    protected $albumHelper;
     
     public function getPhoto($nameFile) {
 
@@ -10,4 +12,9 @@ class AlbumHelper extends AbstractHelper {
         }
         return '/media/images/'.$nameFile;
     }
+    
+    public function setAlbumHelper(AlbumHelper $albumHelper) {
+        $this->albumHelper = $albumHelper;
+        return $this;
+    }    
 }

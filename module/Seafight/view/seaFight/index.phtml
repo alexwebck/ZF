@@ -1,0 +1,190 @@
+<?php 
+$basePath = $this->basePath();
+$this->headLink()->appendStylesheet($basePath . '/css/war_seafight.css');
+$this->headScript()
+        ->appendFile($basePath . '/js/jquery-1.7.2.min.js', 'text/javascript')
+        ->appendFile($basePath . '/js/jquery-ui-1.8.18.custom.min.js', 'text/javascript')
+        ->appendFile($basePath . '/js/war_seafight.js', 'text/javascript');
+?>
+<form action="" id="battleground">
+<div id="allShips">    
+    <div class="ships">
+        <div class="ship4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="ships">
+        <div class="ship3">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>   
+        <div class="clear"></div>
+    </div>
+    <div class="ships">    
+        <div class="ship2">
+            <div></div>
+            <div></div>
+        </div>     
+        <div class="clear"></div>
+    </div>
+    <div class="ships">    
+        <div class="ship1">
+            <div></div>
+        </div>         
+    </div>
+</div>    
+<table class="seaFight">
+    <tbody>
+        <tr id="n">
+            <td class="x0"></td>
+            <td class="x1">1</td>
+            <td class="x2">2</td>
+            <td class="x3">3</td>
+            <td class="x4">4</td>
+            <td class="x5">5</td>
+            <td class="x6">6</td>
+            <td class="x7">7</td>
+            <td class="x8">8</td>
+            <td class="x9">9</td>
+            <td class="x10">10</td>            
+        </tr>
+        <tr id="y1">
+            <td class="x0">A</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>
+        <tr id="y2">
+            <td class="x0">B</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>   
+        <tr id="y3">
+            <td class="x0">C</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>    
+        <tr id="y4">
+            <td class="x0">D</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>  
+        <tr id="y5">
+            <td class="x0">E</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>  
+        <tr id="y6">
+            <td class="x0">F</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>    
+        <tr id="y7">
+            <td class="x0">G</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>   
+        <tr id="y8">
+            <td class="x0">H</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>    
+        <tr id="y9">
+            <td class="x0">I</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>   
+        <tr id="y10">
+            <td class="x0">J</td>
+            <td class="x1"></td>
+            <td class="x2"></td>
+            <td class="x3"></td>
+            <td class="x4"></td>
+            <td class="x5"></td>
+            <td class="x6"></td>
+            <td class="x7"></td>
+            <td class="x8"></td>
+            <td class="x9"></td>
+            <td class="x10"></td>
+        </tr>         
+    </tbody>
+</table>
+    <label for="nameField">Input your name : </label><input type="text" name="username" id="nameField">
+    <input type="button" id="start" value="У битву" />
+</form>

@@ -3,15 +3,14 @@ return array(
     'di' => array(
         'instance' => array(
             'alias' => array(
-                'album' => 'Album\Controller\AlbumController',
+                'Seafight' => 'Seafight\Controller\SeafightController',
             ),
-            'Album\Controller\AlbumController' => array(
+            'Seafight\Controller\SeafightController' => array(
                 'parameters' => array(
-                    'albumTable' => 'Album\Model\AlbumTable',
-                    'albumHelper' => 'Album\Helper\AlbumHelper',
+                    'usersTable' => 'Seafight\Model\UsersTable',
                 ),
             ),           
-            'Album\Model\AlbumTable' => array(
+            'Seafight\Model\UsersTable' => array(
                 'parameters' => array(
                     'adapter' => 'Zend\Db\Adapter\Adapter',
                     )
@@ -19,7 +18,7 @@ return array(
             'Zend\View\Resolver\TemplatePathStack' => array(
                 'parameters' => array(
                     'paths'  => array(
-                        'album' => __DIR__ . '/../view',
+                        'Seafight' => __DIR__ . '/../view',
                     ),
                 ),
             ),

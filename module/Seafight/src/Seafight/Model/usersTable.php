@@ -18,8 +18,25 @@ class UsersTable extends TableGateway
             'user' => md5($username),
             'name' => $username,
         );
-        $this->insert($data);
+        
+        $db = $this->getAdapter()->getDriver()->getConnection();
+        $db->beginTransaction();
+        
+        try {
+            $this->insert($data);
+            $db->commit();
+        } catch (Exception $e) {
+            $db->rollBack();
+            echo $e->getMessage();
+        }
     }
+    
+     public function fetchAll()
+    {
+        $resultSet = $this->select();
+        return $resultSet;
+    }
+    
 }
 
 ?>

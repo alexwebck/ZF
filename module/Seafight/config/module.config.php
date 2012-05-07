@@ -8,6 +8,8 @@ return array(
             'Seafight\Controller\SeafightController' => array(
                 'parameters' => array(
                     'usersTable' => 'Seafight\Model\UsersTable',
+                    'gameTable' => 'Seafight\Model\GameTable',
+                    'warTable' => 'Seafight\Model\WarTable',
                 ),
             ),           
             'Seafight\Model\UsersTable' => array(
@@ -15,6 +17,16 @@ return array(
                     'adapter' => 'Zend\Db\Adapter\Adapter',
                     )
             ),
+            'Seafight\Model\GameTable' => array(
+                'parameters' => array(
+                    'adapter' => 'Zend\Db\Adapter\Adapter',
+                    )
+            ),
+            'Seafight\Model\WarTable' => array(
+                'parameters' => array(
+                    'adapter' => 'Zend\Db\Adapter\Adapter',
+                    )
+            ),            
             'Zend\View\Resolver\TemplatePathStack' => array(
                 'parameters' => array(
                     'paths'  => array(

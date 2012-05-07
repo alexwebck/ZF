@@ -8,7 +8,7 @@ class SeafightTable extends TableGateway
     public function __construct(Adapter $adapter = null, $databaseSchema = null, 
         ResultSet $selectResultPrototype = null)
     {
-        return parent::__construct('seafight', $adapter, $databaseSchema, 
+        return parent::__construct('war', $adapter, $databaseSchema, 
             $selectResultPrototype);
     }
     public function fetchAll()
@@ -28,9 +28,22 @@ class SeafightTable extends TableGateway
 
     public function addShips($seafight)
     {
-
-        $this->insert($data);
-    }    
+        $data = array(
+            'user' => md5($username),
+            'name' => $username,
+        );
+        
+        $db = $this->getAdapter()->getDriver()->getConnection();
+        $db->beginTransaction();
+        
+        try {
+            $this->insert($data);
+            $db->commit();
+        } catch (Exception $e) {
+            $db->rollBack();
+            echo $e->getMessage();
+        }
+    }
     public function updateAlbum($id, $artist, $title, $photo)
     {
         $data = array(

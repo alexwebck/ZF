@@ -1,0 +1,19 @@
+<?php 
+$basePath = $this->basePath();
+$this->headLink()->appendStylesheet($basePath . '/css/war_seafight.css');
+$this->headScript()
+        ->appendFile($basePath . '/js/jquery-1.7.2.min.js', 'text/javascript')
+        ->appendFile($basePath . '/js/jquery-ui-1.8.18.custom.min.js', 'text/javascript')
+        ->appendFile($basePath . '/js/js.js', 'text/javascript');
+?>
+<form action="" method="post" class="waiting">
+    <input id="waiting_game" type="hidden" name="user" value="" />
+    <label for="nameField">Input your name : </label><input type="text" name="username" />
+    <ul>
+        <li>
+            <?php foreach ($game as $value) { ?>
+                <?php echo $value->name;?> <input id="game_id_<?php echo $value->id;?>" class="join_to_game" type="submit" value="Join to game" /><br/>
+            <?php } ?>
+        </li>
+    </ul>
+</form>

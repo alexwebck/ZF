@@ -38,6 +38,12 @@ class UsersTable extends TableGateway
         return $resultSet;
     }
     
+    public function getUser($array)
+    {
+        $rowset = $this->select($array);
+        $row = $rowset->current();
+        return $row;
+    }    
 }
 
 ?>

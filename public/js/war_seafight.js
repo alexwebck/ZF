@@ -18,8 +18,9 @@ $(function() {
         $.ajax({
             url: "/Seafight/add",
             type: 'POST',
-            data: { cells: cells, username: $("#nameField").val() }
+            data: {cells: cells, username: $("#nameField").val()}
         }).done(function() {
+            window.location = "/Seafight/waiting";
         });
     });
     $(".ships > div").mouseup(function (event) {

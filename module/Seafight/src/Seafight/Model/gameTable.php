@@ -32,10 +32,19 @@ class GameTable extends TableGateway
         }
     }
     
-     public function fetchAll()
+    public function getGame($status)
     {
-        $resultSet = $this->select();
-        return $resultSet;
+        $status  = (int) $status;
+        $query = "
+            SELECT * FROM game AS g
+            INNER JOIN users AS u 
+            ON g.id_user1 = u.id
+            WHERE g.status = '$status'
+            ORDER BY g.id DESC
+            ";
+        $adapter = $this->getAdapter();
+        $rowset = $adapter->query($query, Adapter::QUERY_MODE_EXECUTE);
+        return $rowset;
     }
     
 }

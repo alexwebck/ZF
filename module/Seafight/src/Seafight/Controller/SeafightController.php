@@ -21,15 +21,50 @@ class SeafightController extends ActionController
             $ships_location = $request->post()->get('cells');
             $userName = $request->post()->get('username');
             
-            $user_id = $this->usersTable->addUser($userName);
+            $user = $this->usersTable->getUser(array('name' => $userName));
+            if(!$user) {
+                $user_id = $this->usersTable->addUser($userName);
+            } else {
+                $user_id = $user->id;
+            }
             $game_id = $this->gameTable->addGame($user_id);
             $this->warTable->addWar($game_id, '', serialize($ships_location));
             
             $userName = $request->post()->get('username');
             return;            
         }
-    }    
+    }  
     
+    public function waitingAction() 
+    {
+        $request = $this->getRequest();
+        if($request->isPost()) {
+            $formData = $request->post()->toArray();
+            $game_id = str_replace('game_id', '', $formData['game_id']); 
+            $user2 = $formData['username'];
+            $user = $this->usersTable->getUser(array('name' => $user2));
+
+            if(!$user) {
+                $user_id = $this->usersTable->addUser($user2);
+            } else {
+                $user_id = $user->id;
+            }
+            $this->gameTable->addGame($user_id, 2, 2);
+            return $this->redirect()->toRoute('default', array(
+                'controller' => 'seafight',
+                'action'     => 'game',
+            ));
+        } else {
+            $game = $this->gameTable->getGame(1);
+            return array('game' => $game);
+        }
+    }
+    
+    public function gameAction() 
+    {
+        
+    }
+
     public function setUsersTable(UsersTable $usersTable)
     {
         $this->usersTable = $usersTable;
